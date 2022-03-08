@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import TodoItem from './components/TodoItem'
 import AddTodo from './components/AddTodo'
 import { getTodos, addTodo, updateTodo, deleteTodo } from './API'
+
+//import registerServiceWorker from "./serverWorker";
+//registerServiceWorker();
 //import './App.css';
 
 const App: React.FC = () => {
