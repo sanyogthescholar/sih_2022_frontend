@@ -22,7 +22,7 @@ export const addTodo = async(formData: ITodo): Promise<AxiosResponse<ApiDataType
             status: false,
         }
 
-        let body= JSON.stringify(todo)
+        //let body= JSON.stringify(todo)
         const config = {
             headers: {
               'Content-Type': 'application/JSON'
