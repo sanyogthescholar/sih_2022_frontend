@@ -29,7 +29,7 @@ export const addTodo = async(formData: ITodo): Promise<AxiosResponse<ApiDataType
             }
           };
           //above code added from https://stackoverflow.com/a/63763326/13681680
-        
+
           const saveTodo: AxiosResponse<ApiDataType> = await axios.post(
             baseUrl + "/add-todo",
             todo,
