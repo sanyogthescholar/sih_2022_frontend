@@ -109,3 +109,87 @@ body {
 .hide-button {
     display: none;
 }
+
+@media (max-width:1024px)and (min-width:769px){
+    .Form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #444;
+        margin-bottom: 1rem;
+        flex-direction: column;
+        
+        
+    }
+    .Form > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Form input {
+        background: #f5f6f7;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        display: block;
+        margin: 0.3rem 1rem 0 0;
+        margin-bottom: 16px;
+    }
+    
+}
+@media (max-width:768px)and (min-width:481px){
+    .Form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #444;
+        margin-bottom: 1rem;
+        flex-direction: column;
+    }
+    .Form > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Form input {
+        background: #f5f6f7;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        display: block;
+        margin: 0.3rem 1rem 0 0;
+        margin-bottom: 16px;
+    }
+    
+}
+@media (max-width: 480px){
+    .Form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #444;
+        margin-bottom: 1rem;
+        flex-direction: column;
+    }
+    .Form > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Form input {
+        background: #f5f6f7;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        display: block;
+        margin: 0.3rem 1rem 0 0;
+        margin-bottom: 16px;
+    }
+    
+}
