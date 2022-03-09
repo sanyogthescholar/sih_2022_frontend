@@ -66,7 +66,7 @@ const App: React.FC = () => {
           todo={todo}
         />
       ))}
-      <AddToHomeScreen delayNotify={100} />
+      <AddToHomeScreen delayNotify={10} />
     </main>
   )
 }
