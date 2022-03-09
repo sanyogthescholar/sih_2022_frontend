@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios"
 
-const baseUrl: string = "https://sih-2022-backend.vercel.app"
+const baseUrl: string = "http://localhost:4000"
 
 export const getTodos = async(): Promise<AxiosResponse<ApiDataType>> => {
     try {
