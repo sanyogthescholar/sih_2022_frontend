@@ -7,7 +7,7 @@ class MainPage extends React.Component {
         <nav className="navbar navbar-expand-lg " id="navbar">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <img src="src\TICKITO_LOGO_SIH_.jpg"/>
+              <img src={require("../logo.jpg")}/>
             </a>
             <button
               className="navbar-toggler"
