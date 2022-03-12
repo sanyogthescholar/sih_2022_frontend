@@ -65,7 +65,7 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
             >
               <option value="" disabled selected>
                 {" "}
-                Select Id {" "}
+                Select ID {" "}
               </option>
               <option value="Passport">Passport</option>
               <option value="Pan Card">Pan Card</option>
@@ -78,17 +78,30 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
           <input
             type="text"
             id="no_of_children"
-            placeholder="Enter Id number"
+            placeholder="Enter ID number"
             required
           />
         </div>
-        <div>
-           
-          <input type="text" id="no_of_adults" placeholder="Enter Number of Adults"  required/>
+        <div id="box2">
+            <select className="time_slot" name="identityType" required
+            >
+              <option value="" disabled selected>
+                {" "}
+                Select Time {" "}
+              </option>
+              <option value="morning">Morning(8am to 11am)</option>
+              <option value="afternoon">Afternoon(12pm to 4pm)</option>
+              <option value="evening">Evening(5pm to 7pm)</option>
+            </select>
+          
         </div>
         <div>
            
-          <input type="text" id="no_of_children" placeholder="Enter Number of Children" required/>
+          <input type="number" id="no_of_adults" placeholder="Enter Number of Adults"  required/>
+        </div>
+        <div>
+           
+          <input type="number" id="no_of_children" placeholder="Enter Number of Children" required/>
         </div>
 
         <button disabled={formData === undefined ? true : false}><b>Buy</b></button>

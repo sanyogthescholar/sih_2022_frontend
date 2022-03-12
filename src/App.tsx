@@ -3,6 +3,7 @@ import TodoItem from './components/TodoItem'
 import AddTodo from './components/AddTodo'
 import { getTodos, addTodo, updateTodo, deleteTodo } from './API'
 import { AddToHomeScreen } from 'react-pwa-add-to-homescreen';
+import MainPage from './components/MainPage'
 //import registerServiceWorker from "./serverWorker";
 //registerServiceWorker();
 //import './App.css';
@@ -55,8 +56,9 @@ const App: React.FC = () => {
   }
 
   return (
-    <main className='App'>
-       
+    <main>
+      <MainPage/>
+      <div className="App">
       <AddTodo saveTodo={handleSaveTodo} />
       {todos.map((todo: ITodo) => (
         <TodoItem
@@ -67,8 +69,9 @@ const App: React.FC = () => {
         />
       ))}
       <AddToHomeScreen delayNotify={10} />
+      </div>
     </main>
   )
 }
-
+// 
 export default App
