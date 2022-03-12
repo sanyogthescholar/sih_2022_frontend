@@ -26,8 +26,7 @@ body {
   color: #fff;
   /* background: #333; */
   background-image: url(https://www.indiaheritagewalks.org/sites/default/files/styles/frontpage_slideshow/public/2021-03/2021-03-25.jpg?itok=FspYxJ5X);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
 }
 
 .App {
