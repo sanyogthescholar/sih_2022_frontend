@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 type Props = {
-  saveTodo: (e: React.FormEvent, formData: ITodo | any) => void;
+  saveTodo: (e: React.FormEvent, formData: ITicket | any) => void;
 };
 
 const AddTodo: React.FC<Props> = ({ saveTodo }) => {
-  const [formData, setFormData] = useState<ITodo | {}>();
+  const [formData, setFormData] = useState<ITicket | {}>();
 
-  const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
+  const handleForm = (e: any): void => {
     setFormData({
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
@@ -23,8 +23,9 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
 
           <div id="box">
             <select
-              name="monumentsnheritagesite"
-              id="mnh "
+              onChange={handleForm}
+              name="site_name"
+              id="site_name"
               placeholder="Select"
               required
             >
@@ -44,24 +45,25 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
           <input
             onChange={handleForm}
             type="text"
-            id="name"
+            name="visitor_name"
+            id="visitor_name"
             placeholder="Enter your Full Name"
             required
           />
         </div>
         <div>
           <input
+            onChange={handleForm}
             type="email"
-            id="email"
-            name="email"
+            id="visitor_email"
+            name="visitor_email"
             placeholder="Enter your Email"
             required
           ></input>
         </div>
-        
-          
+
           <div id="box2">
-            <select className="Id_Selection" name="identityType" required
+            <select id="visitor_id" className="Id_Selection" onChange={handleForm} name="visitor_id" required
             >
               <option value="" disabled selected>
                 {" "}
@@ -72,18 +74,20 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
               <option value="Driving License">Driving License</option>
               <option value="Voter Card">Voter Card</option>
             </select>
-          
+
         </div>
         <div>
           <input
+            onChange={handleForm}
+            name="visitor_id_number"
             type="text"
-            id="no_of_children"
+            id="visitor_id_number"
             placeholder="Enter ID number"
             required
           />
         </div>
         <div id="box2">
-            <select className="time_slot" name="identityType" required
+            <select id="time_slot" onChange={handleForm} className="time_slot" name="time_slot" required
             >
               <option value="" disabled selected>
                 {" "}
@@ -97,11 +101,11 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
         </div>
         <div>
            
-          <input type="number" id="no_of_adults" placeholder="Enter Number of Adults"  required/>
+          <input onChange={handleForm} type="number" id="num_adults" placeholder="Enter Number of Adults"  required/>
         </div>
         <div>
            
-          <input type="number" id="no_of_children" placeholder="Enter Number of Children" required/>
+          <input onChange={handleForm} type="number" id="num_children" placeholder="Enter Number of Children" required/>
         </div>
 
         <button disabled={formData === undefined ? true : false}><b>Buy</b></button>

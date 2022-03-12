@@ -5,7 +5,7 @@ const baseUrl: string = "http://localhost:4000"
 export const getTodos = async(): Promise<AxiosResponse<ApiDataType>> => {
     try {
         const todos: AxiosResponse<ApiDataType> = await axios.get(
-            baseUrl + "/todos"
+            baseUrl + "/tickets"
         )
         return todos
     }
@@ -14,12 +14,19 @@ export const getTodos = async(): Promise<AxiosResponse<ApiDataType>> => {
     }
 }
 
-export const addTodo = async(formData: ITodo): Promise<AxiosResponse<ApiDataType>> => {
+export const addTicket = async(formData: ITicket): Promise<AxiosResponse<ApiDataType>> => {
     try {
-        const todo: Omit<ITodo, "_id"> = {
-            name: formData.name,
-            description: formData.description,
-            status: false,
+        console.log(formData)
+        const ticket: Omit<ITicket, "_id"> = {
+            site_name: formData.site_name,
+            visitor_name: formData.visitor_name,
+            visitor_email: formData.visitor_email,
+            visitor_id: formData.visitor_id,
+            visitor_id_number: formData.visitor_id_number,
+            num_adults: formData.num_adults,
+            num_children: formData.num_children,
+            time_slot: formData.time_slot,
+            checked_in: false,
         }
 
         //let body= JSON.stringify(todo)
@@ -31,9 +38,8 @@ export const addTodo = async(formData: ITodo): Promise<AxiosResponse<ApiDataType
           //above code added from https://stackoverflow.com/a/63763326/13681680
         
           const saveTodo: AxiosResponse<ApiDataType> = await axios.post(
-            baseUrl + "/add-todo",
-            todo,
-            config
+            baseUrl + "/add-ticket",
+            ticket
         )
         return saveTodo
     } catch (error) {
@@ -41,7 +47,7 @@ export const addTodo = async(formData: ITodo): Promise<AxiosResponse<ApiDataType
     }
 }
 
-export const updateTodo = async(todo: ITodo): Promise<AxiosResponse<ApiDataType>> => {
+/*export const updateTodo = async(todo: ITodo): Promise<AxiosResponse<ApiDataType>> => {
     try {
         const todoUpdate: Pick<ITodo, "status"> = {
             status: true
@@ -64,4 +70,4 @@ export const deleteTodo = async(_id: string): Promise<AxiosResponse<ApiDataType>
     } catch(error) {
         throw error
     }
-}
+}*/

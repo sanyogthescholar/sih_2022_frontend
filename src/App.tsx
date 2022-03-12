@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import TodoItem from "./components/TodoItem";
-import AddTodo from "./components/AddTodo";
-import { getTodos, addTodo, updateTodo, deleteTodo } from "./API";
-import { AddToHomeScreen } from "react-pwa-add-to-homescreen";
-import MainPage from "./components/MainPage";
+import React, { useEffect, useState } from 'react';
+import TodoItem from './components/TodoItem'
+import AddTodo from './components/AddTodo'
+import { getTodos, addTicket } from './API'
+import { AddToHomeScreen } from 'react-pwa-add-to-homescreen';
+import MainPage from './components/MainPage'
 import Footer from "./components/Footer";
 //import registerServiceWorker from "./serverWorker";
 //registerServiceWorker();
 //import './App.css';
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState<ITodo[]>([]);
+  const [todos, setTodos] = useState<ITicket[]>([])
 
   useEffect(() => {
     fetchTodos();
@@ -18,23 +18,23 @@ const App: React.FC = () => {
 
   const fetchTodos = (): void => {
     getTodos()
-      .then(({ data: { todos } }: ITodo[] | any) => setTodos(todos))
-      .catch((err: Error) => console.log(err));
-  };
+      .then(({ data: { todos } }: ITicket[] | any) => setTodos(todos))
+      .catch((err: Error) => console.log(err))
+  }
 
-  const handleSaveTodo = (e: React.FormEvent, formData: ITodo): void => {
-    e.preventDefault();
-    addTodo(formData)
+  const handleSaveTodo = (e: React.FormEvent, formData: ITicket): void => {
+    e.preventDefault()
+    addTicket(formData)
       .then(({ status, data }) => {
         if (status !== 201) {
-          throw new Error("Error! ToDo not saved");
+          throw new Error("Error! Ticket not booked")
         }
         setTodos(data.todos);
       })
       .catch((err) => console.log(err));
   };
 
-  const handleUpdateTodo = (todo: ITodo): void => {
+  /*const handleUpdateTodo = (todo: ITodo): void => {
     updateTodo(todo)
       .then(({ status, data }) => {
         if (status !== 200) {
@@ -53,23 +53,15 @@ const App: React.FC = () => {
         }
         setTodos(data.todos);
       })
-      .catch((err) => console.log(err));
-  };
+      .catch(err => console.log(err))
+  }*/
 
   return (
     <main>
       <MainPage />
       <div className="App">
-        <AddTodo saveTodo={handleSaveTodo} />
-        {todos.map((todo: ITodo) => (
-          <TodoItem
-            key={todo._id}
-            updateTodo={handleUpdateTodo}
-            deleteTodo={handleDeleteTodo}
-            todo={todo}
-          />
-        ))}
-        <AddToHomeScreen delayNotify={10} />
+      <AddTodo saveTodo={handleSaveTodo} />
+      <AddToHomeScreen delayNotify={10} />
       </div>
       <Footer />
     </main>
