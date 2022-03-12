@@ -338,8 +338,9 @@ h3 {
         align-items: center;
         padding: 1rem;
         background: #444;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         width: 100%;
+        margin-top: 10% ;
       }
       .Form > div {
         display: grid;
