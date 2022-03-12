@@ -41,6 +41,15 @@ body {
   color: #fff;
   font-weight: 900;
 }
+#footer{
+  
+    position:sticky;
+    width:100%;
+    top:120vh;
+    border:2px solid #444;
+    height: 50%;
+  }
+
 .App {
   max-width: 728px;
   margin: 4rem auto;

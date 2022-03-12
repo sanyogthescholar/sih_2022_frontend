@@ -1,77 +1,79 @@
-import React, { useEffect, useState } from 'react';
-import TodoItem from './components/TodoItem'
-import AddTodo from './components/AddTodo'
-import { getTodos, addTodo, updateTodo, deleteTodo } from './API'
-import { AddToHomeScreen } from 'react-pwa-add-to-homescreen';
-import MainPage from './components/MainPage'
+import React, { useEffect, useState } from "react";
+import TodoItem from "./components/TodoItem";
+import AddTodo from "./components/AddTodo";
+import { getTodos, addTodo, updateTodo, deleteTodo } from "./API";
+import { AddToHomeScreen } from "react-pwa-add-to-homescreen";
+import MainPage from "./components/MainPage";
+import Footer from "./components/Footer";
 //import registerServiceWorker from "./serverWorker";
 //registerServiceWorker();
 //import './App.css';
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState<ITodo[]>([])
+  const [todos, setTodos] = useState<ITodo[]>([]);
 
   useEffect(() => {
-    fetchTodos()
-  }, [])
+    fetchTodos();
+  }, []);
 
   const fetchTodos = (): void => {
     getTodos()
       .then(({ data: { todos } }: ITodo[] | any) => setTodos(todos))
-      .catch((err: Error) => console.log(err))
-  }
+      .catch((err: Error) => console.log(err));
+  };
 
   const handleSaveTodo = (e: React.FormEvent, formData: ITodo): void => {
-    e.preventDefault()
+    e.preventDefault();
     addTodo(formData)
       .then(({ status, data }) => {
         if (status !== 201) {
-          throw new Error("Error! ToDo not saved")
+          throw new Error("Error! ToDo not saved");
         }
-        setTodos(data.todos)
+        setTodos(data.todos);
       })
-      .catch(err => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
   const handleUpdateTodo = (todo: ITodo): void => {
     updateTodo(todo)
       .then(({ status, data }) => {
         if (status !== 200) {
-          throw new Error("Error! ToDo not updated")
+          throw new Error("Error! ToDo not updated");
         }
-        setTodos(data.todos)
+        setTodos(data.todos);
       })
-      .catch(err => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
   const handleDeleteTodo = (_id: string): void => {
     deleteTodo(_id)
       .then(({ status, data }) => {
         if (status !== 200) {
-          throw new Error("Error! ToDo not deleted")
+          throw new Error("Error! ToDo not deleted");
         }
-        setTodos(data.todos)
+        setTodos(data.todos);
       })
-      .catch(err => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
   return (
     <main>
-      <MainPage/>
+      <MainPage />
       <div className="App">
-      <AddTodo saveTodo={handleSaveTodo} />
-      {todos.map((todo: ITodo) => (
-        <TodoItem
-          key={todo._id}
-          updateTodo={handleUpdateTodo}
-          deleteTodo={handleDeleteTodo}
-          todo={todo}
-        />
-      ))}
-      <AddToHomeScreen delayNotify={10} />
+        <AddTodo saveTodo={handleSaveTodo} />
+        {todos.map((todo: ITodo) => (
+          <TodoItem
+            key={todo._id}
+            updateTodo={handleUpdateTodo}
+            deleteTodo={handleDeleteTodo}
+            todo={todo}
+          />
+        ))}
+        <AddToHomeScreen delayNotify={10} />
       </div>
+      <Footer />
     </main>
-  )
-}
-// 
-export default App
+  );
+};
+//
+export default App;
