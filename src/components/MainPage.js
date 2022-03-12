@@ -4,10 +4,15 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg " id="navbar">
+        <nav className="navbar navbar-dark   navbar-default " id="navbar">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <img src={require("../logo.jpg")}/>
+              <img
+                src={require("../logo.jpg")}
+                alt="logo"
+                width="45px"
+                height="45px"
+              />
             </a>
             <button
               className="navbar-toggler"
@@ -21,22 +26,30 @@ class MainPage extends React.Component {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
-              className="collapse navbar-collapse"
+              className="collapse navbar-collapse navbar-default"
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" id="addticket" aria-current="page" href="#">
+                  <a
+                    className="nav-link active"
+                    id="addticket"
+                    aria-current="page"
+                    href="#"
+                  >
                     Add Ticket
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link font-weight-bold" id="dashboard" href="#">
+                  <a
+                    className="nav-link font-weight-bold"
+                    id="dashboard"
+                    href="#"
+                  >
                     Dashboard
                   </a>
                 </li>
               </ul>
-               
             </div>
           </div>
         </nav>
