@@ -56,7 +56,7 @@ const App: React.FC = () => {
 
   return (
     <main className='App'>
-      <h1>My ToDos</h1>
+       
       <AddTodo saveTodo={handleSaveTodo} />
       {todos.map((todo: ITodo) => (
         <TodoItem

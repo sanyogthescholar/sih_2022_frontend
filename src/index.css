@@ -92,9 +92,10 @@ body {
   border: 1px solid #ff9900;
   border-radius: 10px;
   display: block;
-  width: 250px;
+  width: 400px;
   margin: 0.5rem 1rem 0 0;
   font-size: 16px;
+  color: black;
 }
 
 .Form button {
@@ -105,7 +106,10 @@ body {
   cursor: pointer;
   border: none;
   margin-top: 24px;
-  width: 250px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
 }
 
 #box select {
@@ -115,7 +119,7 @@ body {
   background-color: #e8f0f8;
   color: rgb(10, 0, 0);
 
-  width: 250px;
+  width: 400px;
 
   font-size: 16px;
   box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
@@ -123,7 +127,10 @@ body {
   appearance: button;
   outline: none;
 }
-
+#form-heading{
+    text-align: center;
+    margin-bottom: 9px;
+}
 h3 {
   margin-top: 9px;
   margin-bottom: 9px;
@@ -141,13 +148,14 @@ h3 {
   background-color: #e8f0f8;
   color: rgb(10, 0, 0);
 
-  width: 250px;
+  width: 400px;
 
   font-size: 16px;
   box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
   -webkit-appearance: button;
   appearance: button;
   outline: none;
+  margin-top: 9px;
 }
 
 #box2 select option {
@@ -173,80 +181,229 @@ h3 {
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
-  .Form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #444;
-    margin-bottom: 1rem;
-    flex-direction: column;
-  }
-  .Form > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .Form input {
-    background: #f5f6f7;
+    .Form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #444;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      .Form > div {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .Form input {
+        background: #f5f6f7;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+        margin: 0.5rem 1rem 0 0;
+        font-size: 16px;
+        color: black;
+      }
+      
+      .Form button {
+        background: #ff9900;
+        color: #fff;
+        padding: 1rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        border: none;
+        margin-top: 24px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+      }
+      
+      #box select {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        background-color: #e8f0f8;
+        color: rgb(10, 0, 0);
+      
+        width: 100%;
+        font-size: 16px;
+        box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+      }
+      
+#box2 select {
     padding: 0.5rem 1rem;
     border: 1px solid #ff9900;
     border-radius: 10px;
-    display: block;
-    margin: 0.3rem 1rem 0 0;
-    margin-bottom: 16px;
+    background-color: #e8f0f8;
+    color: rgb(10, 0, 0);
+  
+    width: 100%;
+  
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-top: 9px;
   }
+ 
 }
 @media (max-width: 768px) and (min-width: 481px) {
-  .Form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #444;
-    margin-bottom: 1rem;
-    flex-direction: column;
-  }
-  .Form > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .Form input {
-    background: #f5f6f7;
+    .Form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #444;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      .Form > div {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .Form input {
+        background: #f5f6f7;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+        margin: 0.5rem 1rem 0 0;
+        font-size: 16px;
+        color: black;
+      }
+      
+      .Form button {
+        background: #ff9900;
+        color: #fff;
+        padding: 1rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        border: none;
+        margin-top: 24px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+      }
+      
+      #box select {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        background-color: #e8f0f8;
+        color: rgb(10, 0, 0);
+      
+        width: 100%;
+        font-size: 16px;
+        box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+      }
+      
+#box2 select {
     padding: 0.5rem 1rem;
     border: 1px solid #ff9900;
     border-radius: 10px;
-    display: block;
-    margin: 0.3rem 1rem 0 0;
-    margin-bottom: 16px;
+    background-color: #e8f0f8;
+    color: rgb(10, 0, 0);
+  
+    width: 100%;
+  
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-top: 9px;
   }
 }
 @media (max-width: 480px) {
-  .Form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #444;
-    margin-bottom: 1rem;
-    flex-direction: column;
-  }
-  .Form > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .Form input {
-    background: #f5f6f7;
+    .Form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #444;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      .Form > div {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .Form input {
+        background: #f5f6f7;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        display: block;
+        width: 100%;
+        margin: 0.5rem 1rem 0 0;
+        font-size: 16px;
+        color: black;
+      }
+      
+      .Form button {
+        background: #ff9900;
+        color: #fff;
+        padding: 1rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        border: none;
+        margin-top: 24px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+      }
+      
+      #box select {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ff9900;
+        border-radius: 10px;
+        background-color: #e8f0f8;
+        color: rgb(10, 0, 0);
+      
+        width: 100%;
+        font-size: 16px;
+        box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+      }
+      
+#box2 select {
     padding: 0.5rem 1rem;
     border: 1px solid #ff9900;
     border-radius: 10px;
-    display: block;
-    margin: 0.3rem 1rem 0 0;
-    margin-bottom: 16px;
+    background-color: #e8f0f8;
+    color: rgb(10, 0, 0);
+  
+    width: 100%;
+  
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(240, 236, 236, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-top: 9px;
   }
+   
 }
