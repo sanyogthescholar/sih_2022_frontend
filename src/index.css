@@ -30,6 +30,7 @@ body {
 }
 #navbar{
   background-color:#444 ;
+  width: 100%;
 }
 #addticket{
   font-family: "Nunito", sans-serif;
@@ -43,11 +44,13 @@ body {
 }
 #footer{
   
-    position:sticky;
-    width:100%;
-    top:120vh;
-    border:2px solid #444;
-    height: 50%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border:2px solid #444;
+     
+   
   }
 
 .App {
