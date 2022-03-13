@@ -5,7 +5,7 @@ import { getTodos, addTicket } from './API'
 import { AddToHomeScreen } from 'react-pwa-add-to-homescreen';
 import MainPage from './components/MainPage'
 import Footer from "./components/Footer";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Home from './pages/Home';
 //import registerServiceWorker from "./serverWorker";
@@ -19,9 +19,9 @@ const App: React.FC = () => {
     <BrowserRouter>
   
     <Home/>
-     
+     <Routes>
     <Route path='/d' element={ <Dashboard/>}/> 
-     
+    </Routes>
     </BrowserRouter>
   );
 };
