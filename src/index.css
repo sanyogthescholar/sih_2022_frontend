@@ -28,6 +28,11 @@ body {
   background-image: url(https://www.indiaheritagewalks.org/sites/default/files/styles/frontpage_slideshow/public/2021-03/2021-03-25.jpg?itok=FspYxJ5X);
   background-repeat:  repeat;
   background-attachment:fixed;
+  backdrop-filter: blur(1px);
+  
+}
+#logo{
+  margin-left: 12px;
 }
 #navbar {
   background-color: #444;
@@ -99,6 +104,7 @@ body {
   padding: 1rem;
   background: #444;
   margin-bottom: 1rem;
+  
 }
 
 .Form > div {
