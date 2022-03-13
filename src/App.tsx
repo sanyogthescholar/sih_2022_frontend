@@ -55,11 +55,14 @@ const App: React.FC = () => {
       })
       .catch(err => console.log(err))
   }*/
+  let mystyle= {
+    minHeight:"78vh"
+  }
 
   return (
     <main>
       <MainPage />
-      <div className="App">
+      <div className="App" style={mystyle}>
       <AddTodo saveTodo={handleSaveTodo} />
       <AddToHomeScreen delayNotify={10} />
       </div>
