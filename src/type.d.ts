@@ -9,6 +9,7 @@ interface ITicket {
     num_children: number
     time_slot: string
     checked_in: boolean
+    hash: string
     createdAt?: string
     updatedAt?: string
 }

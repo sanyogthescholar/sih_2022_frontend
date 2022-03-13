@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios"
+var SHA256 = require("crypto-js/sha256");
 
 const baseUrl: string = "http://localhost:4000"
 
@@ -17,6 +18,7 @@ export const getTodos = async(): Promise<AxiosResponse<ApiDataType>> => {
 export const addTicket = async(formData: ITicket): Promise<AxiosResponse<ApiDataType>> => {
     try {
         console.log(formData)
+        console.log(SHA256(formData).toString());
         const ticket: Omit<ITicket, "_id"> = {
             site_name: formData.site_name,
             visitor_name: formData.visitor_name,
@@ -26,6 +28,7 @@ export const addTicket = async(formData: ITicket): Promise<AxiosResponse<ApiData
             num_adults: formData.num_adults,
             num_children: formData.num_children,
             time_slot: formData.time_slot,
+            hash: SHA256(formData).toString(),
             checked_in: false,
         }
 
