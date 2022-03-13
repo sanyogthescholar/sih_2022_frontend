@@ -44,6 +44,7 @@ export const addTicket = async(formData: ITicket): Promise<AxiosResponse<ApiData
             baseUrl + "/add-ticket",
             ticket
         )
+        console.log(saveTodo)
         return saveTodo
     } catch (error) {
         throw error

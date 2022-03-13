@@ -5,12 +5,21 @@ import { getTodos, addTicket } from './API'
 import { AddToHomeScreen } from 'react-pwa-add-to-homescreen';
 import MainPage from './components/MainPage'
 import Footer from "./components/Footer";
+import QRCode from "react-qr-code";
+import {encode, decode} from 'node-base64-image';
+function useForceUpdate() {
+  let [value, setState] = useState(true);
+  return () => setState(!value);
+}
+
 //import registerServiceWorker from "./serverWorker";
 //registerServiceWorker();
 //import './App.css';
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<ITicket[]>([])
+  let [code, qr_code] = useState();
+  var [showForm, setshowForm] = React.useState(true)
 
   useEffect(() => {
     fetchTodos();
@@ -26,44 +35,47 @@ const App: React.FC = () => {
     e.preventDefault()
     addTicket(formData)
       .then(({ status, data }) => {
-        if (status !== 201) {
+        if (status !== 200) {
           throw new Error("Error! Ticket not booked")
         }
-        setTodos(data.todos);
+        //setTodos(data.todos);
+        console.log(data)
+        //showForm = false
+        //console.log(data)
+        //decode(data.ticket, { fname: './photos/example', ext: 'jpg' });
+        var matches = data.ticket.toString().match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+        var response = {};
+        //response.type = matches[1];
+        const url = window.URL.createObjectURL(new Blob([data.ticket]));
+        //const link = document.createElement('a');
+        //link.href = url;
+        //link.setAttribute('download', 'ticket.png');
+        const linkSource = `${data.ticket}`;
+        const downloadLink = document.createElement('a');
+        document.body.appendChild(downloadLink);
+
+        downloadLink.href = linkSource;
+        downloadLink.target = '_self';
+        downloadLink.download = "ticket.png";
+        downloadLink.click(); 
+        //document.body.appendChild(link);
+        //link.click();
       })
       .catch((err) => console.log(err));
   };
-
-  /*const handleUpdateTodo = (todo: ITodo): void => {
-    updateTodo(todo)
-      .then(({ status, data }) => {
-        if (status !== 200) {
-          throw new Error("Error! ToDo not updated");
-        }
-        setTodos(data.todos);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const handleDeleteTodo = (_id: string): void => {
-    deleteTodo(_id)
-      .then(({ status, data }) => {
-        if (status !== 200) {
-          throw new Error("Error! ToDo not deleted");
-        }
-        setTodos(data.todos);
-      })
-      .catch(err => console.log(err))
-  }*/
   let mystyle= {
     minHeight:"78vh"
   }
-
+  const forceUpdate = useForceUpdate();
   return (
     <main>
       <MainPage />
       <div className="App" style={mystyle}>
-      <AddTodo saveTodo={handleSaveTodo} />
+      { showForm ? <AddTodo saveTodo={handleSaveTodo} /> : <QRCode value="{qr_data}" /> }
+      <QRCode value="{code}"/>
+      <button onClick={forceUpdate}>
+                Click to re-render
+      </button>
       <AddToHomeScreen delayNotify={10} />
       </div>
       <Footer />
