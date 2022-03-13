@@ -67,11 +67,7 @@ const App: React.FC = () => {
     <main>
       <MainPage />
       <div className="App" style={mystyle}>
-      { showForm ? <AddTodo saveTodo={handleSaveTodo} /> : <QRCode value="{qr_data}" /> }
-      <QRCode value="{code}"/>
-      <button onClick={forceUpdate}>
-                Click to re-render
-      </button>
+      <AddTodo saveTodo={handleSaveTodo} />
       <AddToHomeScreen delayNotify={10} />
       </div>
       <Footer />
