@@ -12,10 +12,6 @@ function useForceUpdate() {
   return () => setState(!value);
 }
 
-//import registerServiceWorker from "./serverWorker";
-//registerServiceWorker();
-//import './App.css';
-
 const App: React.FC = () => {
   const [todos, setTodos] = useState<ITicket[]>([])
   let [code, qr_code] = useState();
@@ -55,7 +51,7 @@ const App: React.FC = () => {
         document.body.appendChild(downloadLink);
 
         downloadLink.href = linkSource;
-        downloadLink.target = '_self';
+        //downloadLink.target = '_self';
         downloadLink.download = "ticket.png";
         downloadLink.click(); 
         //document.body.appendChild(link);
