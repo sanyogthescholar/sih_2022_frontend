@@ -8,10 +8,10 @@ class MainPage extends React.Component {
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               <img
-                src={require("../logo.jpg")}
+                src={require("../tickito_dark_logo.png")}
                 alt="logo"
-                width="45px"
-                height="45px"
+                width="50px"
+                height="50px"
               />
             </a>
             <button

@@ -101,11 +101,11 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
         </div>
         <div>
            
-          <input onChange={handleForm} type="number" id="num_adults" placeholder="Enter Number of Adults"  required/>
+          <input onChange={handleForm} type="number" min="0" id="num_adults" placeholder="Enter Number of Adults"  required/>
         </div>
         <div>
            
-          <input onChange={handleForm} type="number" id="num_children" placeholder="Enter Number of Children" required/>
+          <input onChange={handleForm} type="number" min="0" id="num_children" placeholder="Enter Number of Children" required/>
         </div>
 
         <button disabled={formData === undefined ? true : false}><b>Buy</b></button>
