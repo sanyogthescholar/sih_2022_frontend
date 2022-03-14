@@ -25,7 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
   /* background: #333; */
-  background-image: url(https://www.indiaheritagewalks.org/sites/default/files/styles/frontpage_slideshow/public/2021-03/2021-03-25.jpg?itok=FspYxJ5X);
+  background-image: url(./warli.jpg);
   background-repeat:  repeat;
   background-attachment:fixed;
   backdrop-filter: blur(1px);
